@@ -1,0 +1,37 @@
+package _3_LargestPrimeFactor;
+
+public class Driver {
+
+	//What is the largest prime factor of the number 600851475143 ?
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(largestPrimeFactor(600851475143L));
+	}
+
+//This one took me a while, and I'm not sure how optimal is it//
+
+	public static Long largestPrimeFactor(Long num){
+		Long largest = 0L;
+		for(Long i = 3L; i <= num/2; i+=2){ //lk for primes, +2 since primes can't be even
+			//num/2 is bound since primes can't be beyond half the number 
+			//check if i is a prime factor
+			if(isPrime(i) && num%i ==0){
+				System.out.println(i);
+					largest = i;
+			}				
+		}
+		return largest;
+	}
+
+	//check if a is prime
+	public static boolean isPrime(Long a){
+		System.out.println(a);
+
+		for(Long i=3L; i < Math.sqrt(a); i++){
+			if(a%i == 0){
+				return false;
+			}
+		}
+		return true;
+	}
+}
