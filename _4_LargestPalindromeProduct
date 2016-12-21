@@ -1,0 +1,39 @@
+package _4_LargestPalindromeProduct;
+
+
+//Find the largest palindrome made from the product of two 3-digit numbers.
+public class Driver {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int product = 0;
+
+		int k = 100; 
+		for(int i =100; i < 1000; i++){
+			for(int j =k; j < 1000; j++){
+				if(palindrome(i,j)){ //is a palindrome?
+					if(i*j > product){ //greater product
+						product = i*j; //store
+					}
+				}
+			}
+			k++; //optimization, by updating k you remove duplicate calculations of products (ex. 100X101 and 101X100)
+		}
+		System.out.println(product);
+	}
+
+	//is it a palindrome?
+	public static boolean palindrome(int a, int b){
+		Integer combo = a*b;
+		String comboString = combo.toString(); //store result as string
+		String reverseCombo = new StringBuilder(combo.toString()).reverse().toString(); //reverse string
+
+		//is the string and the reverse of the String equal?
+		if(comboString.equals(reverseCombo)){
+			return true;
+		}
+		return false;
+	}
+
+}
