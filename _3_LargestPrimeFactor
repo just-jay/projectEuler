@@ -6,6 +6,7 @@ public class Driver {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println(largestPrimeFactor(600851475143L));
+		//Answer 6857
 	}
 
 //This one took me a while, and I'm not sure how optimal is it//
