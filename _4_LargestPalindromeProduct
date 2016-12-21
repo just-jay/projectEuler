@@ -21,6 +21,7 @@ public class Driver {
 			k++; //optimization, by updating k you remove duplicate calculations of products (ex. 100X101 and 101X100)
 		}
 		System.out.println(product);
+		//Answer 906609
 	}
 
 	//is it a palindrome?
