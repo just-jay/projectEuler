@@ -1,0 +1,36 @@
+package _10_SummationOfPrimes;
+
+public class Driver {
+
+	//Find the sum of all the primes below two million.
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//Copied and altered code from #7
+		long sum = 2; //2 is prime, include it so you can do odd/even checking
+		int count = 3 ; //1 is not prime , start at 3
+
+		while(count < 2000000){ //up to 2 million
+			if(isPrime(count)){
+				sum+=count;
+				System.out.println(count);
+			} 
+			count+=2;
+		}
+		System.out.println(sum); 
+		//Answer: 142913828922
+		
+	}
+
+	//check is a number is prime //similar logic here to problem #3
+	public static boolean isPrime(int num){
+
+		for(int i = 2; i <= Math.sqrt(num); i++){ //note: up to sqrt
+			if(num%i == 0){
+				return false;
+			}
+		}
+		return true;
+	}
+
+}
