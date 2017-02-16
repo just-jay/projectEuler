@@ -1,0 +1,36 @@
+package _7_10001stPrime;
+
+public class Driver {
+
+	//What is the 10001st prime number?
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+
+		int numberOfPrimes = 0; 
+		int count = 2 ; //1 is not prime , start at 2
+
+		while(numberOfPrimes < 10001){ //find the first 10001 primes
+			if(isPrime(count)){
+				numberOfPrimes++;
+			} 
+			count++;
+		}
+		System.out.println(count-1); //since 1 has been added to the answer
+		//Answer 104743
+	}
+
+	//check is a number is prime //similar logic here to problem #3
+	public static boolean isPrime(int num){
+
+		for(int i = 2; i < num; i++){
+			if(num%i == 0){
+				return false;
+			}
+		}
+		return true;
+	}
+
+}
+
+
